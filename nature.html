@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Philippine Nature | Gallery Showcase</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            color: #23412d;
+        }
+
+        .navbar {
+            background-color: #14532d;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            margin-left: 10px;
+        }
+
+        .navbar .nav-link:hover {
+            color: #86efac !important;
+        }
+
+        .hero {
+            min-height: 80vh;
+            background:
+                linear-gradient(
+                    rgba(0, 50, 20, 0.55),
+                    rgba(0, 50, 20, 0.55)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Coron_Palawan,_Philippines_01.jpg?width=1600")
+                center / cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .section-title {
+            color: #14532d;
+            font-weight: bold;
+        }
+
+        .section-subtitle {
+            color: #52735d;
+        }
+
+        .gallery-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.20);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.08);
+        }
+
+        .card-body {
+            background-color: white;
+        }
+
+        .card-title {
+            color: #14532d;
+            font-weight: bold;
+        }
+
+        .category-btn {
+            border-radius: 25px;
+            margin: 5px;
+        }
+
+        #about {
+            background-color: #dcfce7;
+        }
+
+        .about-icon {
+            font-size: 3rem;
+            color: #15803d;
+        }
+
+        #contact {
+            background-color: #14532d;
+            color: white;
+        }
+
+        footer {
+            background-color: #052e16;
+            color: white;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.55);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .modal-body img {
+            width: 100%;
+            max-height: 550px;
+            object-fit: contain;
+            background-color: #111;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-item img {
+                height: 300px;
+            }
+
+            .carousel-caption {
+                padding: 8px;
+            }
+
+            .carousel-caption h3 {
+                font-size: 1.2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.85rem;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            <i class="bi bi-tree-fill"></i>
+            Green Philippines
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#categories">
+                        Categories
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <h1>
+            Philippine Nature
+        </h1>
+
+        <p class="lead mt-3">
+            Discover the beauty of forests, mountains, islands,
+            oceans, and wildlife across the Philippines.
+        </p>
+
+        <a
+            href="#gallery"
+            class="btn btn-success btn-lg mt-3">
+
+            <i class="bi bi-images"></i>
+            Explore Gallery
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="categories" class="py-5">
+
+    <div class="container text-center">
+
+        <h2 class="section-title">
+            Explore Categories
+        </h2>
+
+        <p class="section-subtitle">
+            Explore the natural beauty of the Philippines.
+        </p>
+
+        <div class="mt-4">
+
+            <button class="btn btn-outline-success category-btn">
+                <i class="bi bi-tree"></i>
+                Forests
+            </button>
+
+            <button class="btn btn-outline-primary category-btn">
+                <i class="bi bi-water"></i>
+                Oceans
+            </button>
+
+            <button class="btn btn-outline-warning category-btn">
+                <i class="bi bi-mountains"></i>
+                Mountains
+            </button>
+
+            <button class="btn btn-outline-danger category-btn">
+                <i class="bi bi-heart"></i>
+                Wildlife
+            </button>
+
+            <button class="btn btn-outline-secondary category-btn">
+                <i class="bi bi-flower1"></i>
+                Environment
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="gallery" class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+                Philippine Nature Gallery
+            </h2>
+
+            <p class="section-subtitle">
+                Real places and wildlife from the Philippines.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Banaue_Rice_Terraces_of_the_Philippines.jpg?width=900"
+                        class="gallery-img"
+                        alt="Banaue Rice Terraces"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Banaue Rice Terraces"
+                        data-description="The Banaue Rice Terraces were carved into the mountains of Banaue, Ifugao, by the ancestors of the indigenous people.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Banaue Rice Terraces
+                        </h5>
+
+                        <p class="card-text">
+                            Ancient terraces carved into the mountains of Ifugao.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chocolate_Hills_Bohol_Philippines.jpg?width=900"
+                        class="gallery-img"
+                        alt="Chocolate Hills"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Chocolate Hills"
+                        data-description="The Chocolate Hills are a famous geological formation located in Bohol, Philippines.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Chocolate Hills
+                        </h5>
+
+                        <p class="card-text">
+                            Bohol's famous cone-shaped hills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mayon_Volcano,_Albay,_Philippines.jpg?width=900"
+                        class="gallery-img"
+                        alt="Mayon Volcano"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Mayon Volcano"
+                        data-description="Mayon Volcano is an active stratovolcano in Albay known for its symmetrical cone.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Mayon Volcano
+                        </h5>
+
+                        <p class="card-text">
+                            The iconic volcano of Albay.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarsier_of_Bohol,_Philippines.jpg?width=800"
+                        class="gallery-img"
+                        alt="Bohol Tarsier"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Bohol Tarsier"
+                        data-description="The Philippine tarsier is one of the smallest primates in the world and is especially associated with Bohol.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Bohol Tarsier
+                        </h5>
+
+                        <p class="card-text">
+                            A tiny primate native to the Philippines.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-sm-4 col-md-8 col-lg-6">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Siargao.jpg?width=1000"
+                        class="gallery-img"
+                        alt="Siargao Island"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Siargao Island"
+                        data-description="Siargao is an island in the Philippines known for its tropical landscapes, beaches, and natural beauty.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Siargao Island
+                        </h5>
+
+                        <p class="card-text">
+                            Tropical scenery and beautiful island landscapes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-sm-8 col-md-4 col-lg-6">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Coron_Palawan,_Philippines_01.jpg?width=1000"
+                        class="gallery-img"
+                        alt="Coron Palawan"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Coron, Palawan"
+                        data-description="Coron in Palawan is known for its beautiful islands, limestone landscapes, clear water, and marine environment.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Coron, Palawan
+                        </h5>
+
+                        <p class="card-text">
+                            Limestone islands and crystal-clear waters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine_Eagle_-_Pithecophaga_jefferyi_-_Ninoy_Aquino_Parks_%26_Wildlife_Center_06.jpg?width=800"
+                        class="gallery-img"
+                        alt="Philippine Eagle"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Philippine Eagle"
+                        data-description="The Philippine eagle is an endangered eagle endemic to forests in the Philippines and is the country's national bird.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Philippine Eagle
+                        </h5>
+
+                        <p class="card-text">
+                            One of the most remarkable birds of the Philippines.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mount_Pulag.jpg?width=900"
+                        class="gallery-img"
+                        alt="Mount Pulag"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Mount Pulag"
+                        data-description="Mount Pulag is Luzon's highest peak and is located where the provinces of Benguet, Ifugao, and Nueva Vizcaya meet.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Mount Pulag
+                        </h5>
+
+                        <p class="card-text">
+                            A famous mountain in Northern Luzon.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tubbataha_Reefs_Natural_Park-112043.jpg?width=900"
+                        class="gallery-img"
+                        alt="Tubbataha Reefs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Tubbataha Reefs Natural Park"
+                        data-description="Tubbataha Reefs Natural Park is a protected marine area in the Philippines known for its coral reefs and marine biodiversity.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Tubbataha Reefs
+                        </h5>
+
+                        <p class="card-text">
+                            A protected marine ecosystem in the Philippines.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-3">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Apo_Island_of_the_Apo_Reef.jpg?width=900"
+                        class="gallery-img"
+                        alt="Apo Reef"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Apo Reef"
+                        data-description="Apo Reef in Occidental Mindoro features a beautiful island, beach, lagoon, mangroves, and important marine habitats.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Apo Reef
+                        </h5>
+
+                        <p class="card-text">
+                            Marine habitats and beautiful island scenery.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Palawan,_Philippines,_Wetlands_2.jpg?width=900"
+                        class="gallery-img"
+                        alt="Palawan Wetlands"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Palawan Wetlands"
+                        data-description="The wetlands of Palawan support unique flora and fauna and are an important part of the island's natural environment.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Palawan Wetlands
+                        </h5>
+
+                        <p class="card-text">
+                            Important habitats for Philippine flora and fauna.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+
+                <div class="card gallery-card">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Apo_Island_Over-Under.jpg?width=1000"
+                        class="gallery-img"
+                        alt="Apo Island Marine Sanctuary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#natureModal"
+                        data-title="Apo Island Marine Sanctuary"
+                        data-description="Apo Island in Negros Oriental is known for its coral reefs and marine conservation efforts.">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Apo Island Marine Sanctuary
+                        </h5>
+
+                        <p class="card-text">
+                            Coral reefs and marine conservation in Negros Oriental.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-4">
+
+            <h2 class="section-title">
+                Philippine Nature Highlights
+            </h2>
+
+            <p class="section-subtitle">
+                Explore some of the country's amazing natural places.
+            </p>
+
+        </div>
+
+
+        <div
+            id="natureCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+
+                <button
+                    type="button"
+                    data-bs-target="#natureCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true">
+                </button>
+
+                <button
+                    type="button"
+                    data-bs-target="#natureCarousel"
+                    data-bs-slide-to="1">
+                </button>
+
+                <button
+                    type="button"
+                    data-bs-target="#natureCarousel"
+                    data-bs-slide-to="2">
+                </button>
+
+            </div>
+
+
+            <div class="carousel-inner rounded shadow">
+
+
+                <div class="carousel-item active">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Coron_Palawan,_Philippines_01.jpg?width=1200"
+                        class="d-block w-100"
+                        alt="Coron Palawan">
+
+                    <div class="carousel-caption">
+
+                        <h3>
+                            Coron, Palawan
+                        </h3>
+
+                        <p>
+                            Beautiful islands and marine landscapes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Banaue_Rice_Terraces_of_the_Philippines.jpg?width=1200"
+                        class="d-block w-100"
+                        alt="Banaue Rice Terraces">
+
+                    <div class="carousel-caption">
+
+                        <h3>
+                            Banaue Rice Terraces
+                        </h3>
+
+                        <p>
+                            A remarkable landscape in Ifugao.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tubbataha_Reefs_Natural_Park-112043.jpg?width=1200"
+                        class="d-block w-100"
+                        alt="Tubbataha Reefs">
+
+                    <div class="carousel-caption">
+
+                        <h3>
+                            Tubbataha Reefs
+                        </h3>
+
+                        <p>
+                            One of the Philippines' important marine ecosystems.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#natureCarousel"
+                data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+                <span class="visually-hidden">
+                    Previous
+                </span>
+
+            </button>
+
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#natureCarousel"
+                data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+                <span class="visually-hidden">
+                    Next
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+                About Philippine Nature
+            </h2>
+
+            <p class="section-subtitle">
+                Understanding our natural environment helps us protect it.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 text-center">
+
+
+            <div class="col-12 col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 p-4">
+
+                    <i class="bi bi-tree about-icon"></i>
+
+                    <h4 class="mt-3">
+                        Forests
+                    </h4>
+
+                    <p>
+                        Philippine forests provide habitats for
+                        many native plants and animals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 p-4">
+
+                    <i class="bi bi-water about-icon"></i>
+
+                    <h4 class="mt-3">
+                        Oceans
+                    </h4>
+
+                    <p>
+                        Philippine waters support coral reefs,
+                        fish, turtles, and many marine species.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 p-4">
+
+                    <i class="bi bi-flower1 about-icon"></i>
+
+                    <h4 class="mt-3">
+                        Biodiversity
+                    </h4>
+
+                    <p>
+                        Protecting native species helps keep
+                        ecosystems healthy and balanced.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+
+            <div class="col-12 col-md-6">
+
+                <h2>
+                    Help Protect the Philippines
+                </h2>
+
+                <p>
+                    Small actions can make a big difference.
+                    Reduce waste, conserve water, plant trees,
+                    and respect wildlife.
+                </p>
+
+                <button
+                    class="btn btn-light"
+                    data-bs-toggle="modal"
+                    data-bs-target="#contactModal">
+
+                    <i class="bi bi-envelope"></i>
+                    Contact Us
+
+                </button>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 mt-4 mt-md-0">
+
+                <div class="card text-dark shadow">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Get Involved
+                        </h5>
+
+                        <p class="card-text">
+                            Encourage others to care for
+                            Philippine nature and wildlife.
+                        </p>
+
+                        <button
+                            class="btn btn-success"
+                            data-bs-toggle="modal"
+                            data-bs-target="#contactModal">
+
+                            Learn More
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div
+    class="modal fade"
+    id="natureModal"
+    tabindex="-1"
+    aria-labelledby="natureModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="natureModalLabel">
+
+                    Philippine Nature
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body text-center">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    class="img-fluid rounded mb-3"
+                    alt="Selected image">
+
+                <h3
+                    id="modalTitle"
+                    class="text-success">
+                </h3>
+
+                <p id="modalDescription"></p>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="modal fade"
+    id="contactModal"
+    tabindex="-1"
+    aria-labelledby="contactModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="contactModalLabel">
+
+                    Contact Green Philippines
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <p>
+                    Thank you for supporting Philippine nature
+                    and environmental awareness!
+                </p>
+
+
+                <form>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter your name">
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Enter your email">
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Message
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            rows="4"
+                            placeholder="Your message">
+                        </textarea>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-success"
+                        data-bs-dismiss="modal">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer class="py-4 text-center">
+
+    <div class="container">
+
+        <p class="mb-1">
+
+            <i class="bi bi-tree-fill"></i>
+
+            Green Philippines — Nature & Environment Gallery
+
+        </p>
+
+        <small>
+            Created using HTML5, CSS, and Bootstrap 5
+        </small>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    const natureModal = document.getElementById("natureModal");
+
+    natureModal.addEventListener("show.bs.modal", function (event) {
+
+        const image = event.relatedTarget;
+
+        const title = image.getAttribute("data-title");
+
+        const description =
+            image.getAttribute("data-description");
+
+        const imageSource =
+            image.getAttribute("src");
+
+        document.getElementById("modalTitle").textContent =
+            title;
+
+        document.getElementById("modalDescription").textContent =
+            description;
+
+        document.getElementById("modalImage").src =
+            imageSource;
+
+        document.getElementById("modalImage").alt =
+            title;
+
+    });
+
+</script>
+
+</body>
+</html>
